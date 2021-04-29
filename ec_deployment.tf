@@ -10,14 +10,14 @@ resource "ec_deployment" "onweek_demo" {
   deployment_template_id = "aws-io-optimized-v2"
   elasticsearch {
     topology {
-      id   = "hot_content"
-      size = "4g"
+      id         = "hot_content"
+      size       = "4g"
       zone_count = 1
     }
   }
   kibana {
     topology {
-      size = "1g"
+      size       = "1g"
       zone_count = 1
     }
   }
