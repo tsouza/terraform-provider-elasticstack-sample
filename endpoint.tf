@@ -1,9 +1,9 @@
-resource "aws_lightsail_static_ip" "onweek_windows_test_ip_1" {
-  name = "onweek_windows_test_ip_1"
+resource "aws_lightsail_static_ip" "onweek_windows_test_ip" {
+  name = "onweek_windows_test_ip"
 }
 
-resource "aws_lightsail_instance" "onweek_windows_test_1" {
-  name              = "onweek_windows_test_1"
+resource "aws_lightsail_instance" "onweek_windows_test" {
+  name              = "onweek_windows_test"
   availability_zone = "us-east-1a"
   blueprint_id      = "windows_server_2019"
   bundle_id         = "micro_win_2_0"
@@ -27,7 +27,7 @@ EOF
 }
 
 resource "aws_lightsail_instance_public_ports" "onweek_test" {
-  instance_name = aws_lightsail_instance.onweek_windows_test_1.name
+  instance_name = aws_lightsail_instance.onweek_windows_test.name
 
   port_info {
     protocol  = "tcp"
@@ -36,10 +36,10 @@ resource "aws_lightsail_instance_public_ports" "onweek_test" {
   }
 }
 resource "aws_lightsail_static_ip_attachment" "onweek_test" {
-  static_ip_name = aws_lightsail_static_ip.onweek_windows_test_ip_1.id
-  instance_name  = aws_lightsail_instance.onweek_windows_test_1.id
+  static_ip_name = aws_lightsail_static_ip.onweek_windows_test_ip.id
+  instance_name  = aws_lightsail_instance.onweek_windows_test.id
 }
 
 output "windows_ip" {
-  value = aws_lightsail_static_ip.onweek_windows_test_ip_1.ip_address
+  value = aws_lightsail_static_ip.onweek_windows_test_ip.ip_address
 }
