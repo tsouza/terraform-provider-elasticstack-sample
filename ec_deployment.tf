@@ -9,7 +9,7 @@ resource "ec_deployment" "onweek_demo" {
   deployment_template_id = "aws-io-optimized-v2"
   elasticsearch {
     topology {
-      id   = "default"
+      id   = "hot_content"
       size = "4g"
     }
   }
