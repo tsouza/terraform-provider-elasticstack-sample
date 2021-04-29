@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-east-1"
-}
-
 resource "aws_lightsail_static_ip" "onweek_windows_test_ip_1" {
   name = "onweek_windows_test_ip_1"
 }
