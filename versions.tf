@@ -1,6 +1,10 @@
 terraform {
   required_version = "> 0.15"
   required_providers {
+    elasticstack = {
+      source  = "tsouza/elasticstack"
+      version = "0.0.2-pre"
+    }
     ec = {
       source  = "elastic/ec"
       version = "0.1.1"
