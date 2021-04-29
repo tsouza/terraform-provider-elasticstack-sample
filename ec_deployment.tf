@@ -15,7 +15,6 @@ resource "ec_deployment" "onweek_demo" {
   }
   kibana {
     topology {
-      id   = "default"
       size = "1g"
     }
   }
