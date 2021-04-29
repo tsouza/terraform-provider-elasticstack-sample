@@ -5,5 +5,9 @@ terraform {
       source = "elastic/ec"
       version = "0.1.1"
     }
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 3"
+    }
   }
 }

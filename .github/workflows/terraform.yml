@@ -58,4 +58,4 @@ jobs:
       -
         name: Terraform Apply
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: terraform apply -auto-approve -var 'EC_API_KEY=${{ secrets.EC_API_KEY }}'
+        run: terraform apply -auto-approve -var 'EC_API_KEY=${{ secrets.EC_API_KEY }}' -var ''
