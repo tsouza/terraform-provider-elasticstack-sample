@@ -7,6 +7,16 @@ resource "ec_deployment" "onweek_demo" {
   region                 = "us-east-1"
   version                = data.ec_stack.latest.version
   deployment_template_id = "aws-io-optimized-v2"
-  elasticsearch {}
-  kibana {}
+  elasticsearch {
+    topology {
+      id   = "default"
+      size = "4g"
+    }
+  }
+  kibana {
+    topology {
+      id   = "default"
+      size = "1g"
+    }
+  }
 }
