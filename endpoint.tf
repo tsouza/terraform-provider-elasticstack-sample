@@ -17,7 +17,7 @@ Add-MpPreference -ExclusionPath "C:\Users\Administrator\Desktop"
 
 Invoke-WebRequest -Uri "https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-7.12.1-windows-x86_64.zip" -OutFile "agent.zip"
 Expand-Archive -Path "agent.zip" -DestinationPath "C:\Users\Administrator\Desktop\agent"
-Start-Process -Wait -FilePath "C:\Users\Administrator\Desktop\agent\elastic-agent-7.12.1-windows-x86_64\elastic-agent.exe" -ArgumentList "install","-f","--kibana-url=${data.terraform_remote_state.ess.outputs.ess_onweek_test_1_kibana_url}","--enrollment-token=${elasticstack_fleet_agent_policy.endpoint_1.enrollment_secret}"
+Start-Process -Wait -FilePath "C:\Users\Administrator\Desktop\agent\elastic-agent-7.12.1-windows-x86_64\elastic-agent.exe" -ArgumentList "install","-f","--kibana-url=${ec_deployment.onweek_demo.kibana[0].https_endpoint}","--enrollment-token=${elasticstack_fleet_agent_policy.endpoint_1.enrollment_secret}"
 
 Start-Sleep -Seconds 120
 
