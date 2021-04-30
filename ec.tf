@@ -27,6 +27,7 @@ resource "ec_deployment" "onweek_demo" {
 
 provider "elasticstack" {
   elasticsearch_url = ec_deployment.onweek_demo.elasticsearch[0].https_endpoint
+  kibana_url        = ec_deployment.onweek_demo.kibana[0].https_endpoint
   username          = ec_deployment.onweek_demo.elasticsearch_username
   password          = ec_deployment.onweek_demo.elasticsearch_password
 }
