@@ -2,8 +2,8 @@ resource "elasticstack_fleet_agent_policy" "endpoint_1" {
   name = "onweek-endpoint-1"
 }
 
-resource "aws_lightsail_instance" "onweek_windows_test_1" {
-  name              = "onweek_windows_test_1"
+resource "aws_lightsail_instance" "onweek_windows_test_3" {
+  name              = "onweek_windows_test_3"
   availability_zone = "us-east-1a"
   blueprint_id      = "windows_server_2019"
   bundle_id         = "micro_win_2_0"
